@@ -1,2 +1,1 @@
-# thetextinbox
-Text inbox web application 
+# final-project

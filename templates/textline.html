@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+{% block title %}{% endblock %}
+{% block body %}
+<div id="textline_main_container">
+
+  <div id="header_container">
+    <div id='admin_panel'>{% if is_admin is none %}<a href='/admin_login'>Admin</a>{% endif %}{% if is_admin %}<a href='/admin_logout'> Logout</a>{% endif %}</div>
+    The Text Inbox
+    <span>(314) 310-2636</span>
+  </div>
+  <div id="textline_body_container">
+
+    <div id="sidebar_container">
+      <div id='sidebar_header_container'>
+        <div id="search_container">
+          <input id='user_search'>
+          <button id='user_search_button'>Search</button>
+        </div>
+        <div id="all_users_button_container"><i class="far fa-comments-alt"></i>ALL CONVERSATIONS</div>
+      </div>
+
+        <div id='sidebar_contacts'>
+
+          {% for user in all_users %}
+          <div class='contact_container'>
+                <div class='message_information' id={{user.user.id}}>
+                  <div class='message_username' >{{user.user.display_name}}
+                    {% if is_admin %}
+                      <i class="fa fa-edit edit_name"></i>
+                    {% endif %}
+                  </div>
+                  <span class='contact_from_number'>{% if is_admin %}{{user.user.phone_number}}{% endif %}</span>
+                  <span class='message_from_location'>{{user.user.location}}</span>
+                </div>
+              <div class='message_user_total'>{{user.text_count}}</div>
+          </div>
+          {% endfor %}
+          <div class='contact_container' id="contact_container_template">
+                <div class='message_information'>
+                  <div class='message_username'>
+                    {% if is_admin %}
+                      <i class="fa fa-edit edit_name"></i>
+                    {% endif %}
+                  </div>
+                  {% if is_admin %}
+                    <span class='contact_from_number'></span>
+                  {% endif %}
+                  <span class='message_from_location'></span>
+                </div>
+              <div class='message_user_total'></div>
+          </div>
+        </div>
+      </div>
+      <div id='message_container'>
+        {% for message in all_messages %}
+        {% if message[0].message_media_url %}
+          <div class='message bubble message_with_picture'>
+        {% else %}
+          <div class='message' >
+        {% endif %}
+          <span class='message_display_name'>{{message[1].display_name}}</span>
+          {% if is_admin %}
+          <span class='message_from_number'>{{message[1].phone_number}}</span>
+          {% endif %}
+          <div class='message_body_container'>{{message[0].message_body}}</div>
+          {% if message[0].message_media_url %}
+          <div class='message_media_container'><img class='text_image' src='{{message[0].message_media_url}}'></div>
+          {% endif %}
+          <span class='message_received_time'>{{message[0].message_timestamp}}</span>
+        </div>
+        {% endfor %}
+        <div class='message' id="message_container_template">
+          <span class='message_display_name'></span>
+          {% if is_admin %}
+          <span class='message_from_number'></span>
+          {% endif %}
+          <div class='message_body_container'></div>
+          <div id='media_placeholder'></div>
+          <span class='message_received_time'></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

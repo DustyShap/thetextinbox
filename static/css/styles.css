@@ -1,0 +1,320 @@
+@import url("https://fonts.googleapis.com/css?family=Do+Hyeon");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+html {
+  width: 100%;
+  height: 100%; }
+
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white !important; }
+
+a {
+  color: black !important; }
+
+#main_container {
+  width: 60%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+#textline_main_container {
+  width: 90%;
+  height: 100%;
+  box-shadow: 0 0 20px #333;
+  border: 1px solid #1c3a60; }
+  #textline_main_container #header_container {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 45px;
+    color: black;
+    background-color: #d6d6d6;
+    border-bottom: 1px solid black; }
+    #textline_main_container #header_container span {
+      font-size: 12px;
+      padding-bottom: 10px; }
+    #textline_main_container #header_container #admin_panel {
+      color: black;
+      width: 100%;
+      height: 5%;
+      padding: 5px;
+      margin-top: 10px;
+      display: flex;
+      justify-content: flex-end;
+      font-size: 12px !important;
+      cursor: pointer; }
+    #textline_main_container #header_container .header_image {
+      width: 100%;
+      height: auto; }
+  #textline_main_container #textline_body_container {
+    height: 85%;
+    width: 100%;
+    display: flex; }
+    #textline_main_container #textline_body_container #sidebar_container {
+      height: 100%;
+      width: 35%;
+      border-right: 1px solid #1c3a60; }
+      #textline_main_container #textline_body_container #sidebar_container #sidebar_header_container {
+        height: 20%;
+        width: 100%;
+        border-bottom: 1px solid black; }
+        #textline_main_container #textline_body_container #sidebar_container #sidebar_header_container #search_container {
+          height: 50%;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-bottom: 1px solid black; }
+          #textline_main_container #textline_body_container #sidebar_container #sidebar_header_container #search_container #user_search {
+            margin-right: 5px;
+            border: 1px solid black; }
+          #textline_main_container #textline_body_container #sidebar_container #sidebar_header_container #search_container #user_search_button {
+            font-family: 'Source Sans Pro', sans-serif; }
+        #textline_main_container #textline_body_container #sidebar_container #sidebar_header_container #all_users_button_container {
+          height: 50%;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #d6d6d6;
+          font-family: 'Source Sans Pro', sans-serif; }
+        #textline_main_container #textline_body_container #sidebar_container #sidebar_header_container #all_users_button_container:hover {
+          cursor: pointer;
+          border: 1px solid #da3832; }
+      #textline_main_container #textline_body_container #sidebar_container #sidebar_contacts {
+        width: 100%;
+        height: 80%;
+        overflow-y: auto;
+        overflow-y: -moz-scrollbars-vertical;
+        overflow-x: hidden;
+        background-color: #ffffff; }
+        #textline_main_container #textline_body_container #sidebar_container #sidebar_contacts .contact_container {
+          width: 100%;
+          height: 55px;
+          border-bottom: 1px solid #1c3a60;
+          font-family: 'Source Sans Pro', sans-serif;
+          padding: 3px;
+          display: flex;
+          background-color: #ffffff; }
+          #textline_main_container #textline_body_container #sidebar_container #sidebar_contacts .contact_container .message_information {
+            width: 75%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 5px;
+            background-color: #ffffff; }
+            #textline_main_container #textline_body_container #sidebar_container #sidebar_contacts .contact_container .message_information span {
+              color: #1c3a60;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              font-size: 10px;
+              margin-top: 2px; }
+            #textline_main_container #textline_body_container #sidebar_container #sidebar_contacts .contact_container .message_information .message_username {
+              height: 35%;
+              width: 100%;
+              font-size: 14px;
+              margin-bottom: 5px; }
+              #textline_main_container #textline_body_container #sidebar_container #sidebar_contacts .contact_container .message_information .message_username #name_change_button {
+                font-size: 12px;
+                height: 20px; }
+              #textline_main_container #textline_body_container #sidebar_container #sidebar_contacts .contact_container .message_information .message_username .name_change {
+                width: 100px;
+                height: 22px; }
+              #textline_main_container #textline_body_container #sidebar_container #sidebar_contacts .contact_container .message_information .message_username .edit_name {
+                margin-left: 10px;
+                cursor: pointer; }
+            #textline_main_container #textline_body_container #sidebar_container #sidebar_contacts .contact_container .message_information .message_from_number {
+              height: 30%;
+              width: 100%;
+              font-size: 12px; }
+            #textline_main_container #textline_body_container #sidebar_container #sidebar_contacts .contact_container .message_information .message_from_location {
+              height: 20%;
+              width: 100%; }
+          #textline_main_container #textline_body_container #sidebar_container #sidebar_contacts .contact_container .message_user_total {
+            height: 50%;
+            width: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            background-color: #da3832;
+            border: 1px solid #1c3a60;
+            font-size: 16px;
+            align-self: center; }
+        #textline_main_container #textline_body_container #sidebar_container #sidebar_contacts .contact_container:hover {
+          border: 1px solid red;
+          cursor: pointer; }
+      #textline_main_container #textline_body_container #sidebar_container #contact_container_template {
+        display: none !important; }
+    #textline_main_container #textline_body_container #message_container {
+      height: 100%;
+      width: 65%;
+      overflow-y: auto;
+      overflow-y: -moz-scrollbars-vertical;
+      overflow-x: hidden;
+      background-color: #d6d6d6;
+      padding: 10px; }
+      #textline_main_container #textline_body_container #message_container #message_container_template {
+        display: none !important; }
+      #textline_main_container #textline_body_container #message_container .message_with_picture {
+        height: 70% !important; }
+      #textline_main_container #textline_body_container #message_container .message {
+        width: 100%;
+        height: 35%;
+        max-height: 150%;
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        margin-bottom: 5px;
+        justify-content: center;
+        background-color: white; }
+        #textline_main_container #textline_body_container #message_container .message .message_media_container {
+          height: 100%;
+          max-width: auto;
+          flex-grow: 2;
+          display: flex;
+          align-items: flex-start;
+          justify-content: center;
+          margin-bottom: 20px; }
+          #textline_main_container #textline_body_container #message_container .message .message_media_container .text_image {
+            max-width: 100%;
+            max-height: 100%;
+            cursor: pointer;
+            border: 1px solid black; }
+        #textline_main_container #textline_body_container #message_container .message .message_display_name {
+          font-size: 20px;
+          font-family: 'Source Sans Pro', sans-serif;
+          font-weight: bold; }
+        #textline_main_container #textline_body_container #message_container .message .message_from_number {
+          font-size: 10px;
+          margin-bottom: 20px; }
+        #textline_main_container #textline_body_container #message_container .message .message_body_container {
+          height: 90%;
+          width: 100%;
+          word-wrap: break-word;
+          overflow-y: auto;
+          overflow-y: -moz-scrollbars-vertical;
+          overflow-x: hidden; }
+        #textline_main_container #textline_body_container #message_container .message .message_received_time {
+          font-size: 10px;
+          font-style: italic;
+          margin-top: 10px; }
+
+#login_container {
+  width: 60%;
+  height: 30%;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: white;
+  box-shadow: 0 0 10px #333; }
+  #login_container #admin_form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+  #login_container #admin_password {
+    margin: 10px;
+    border: 1px solid black;
+    width: 40%; }
+  #login_container #error_message {
+    color: #da3832;
+    margin-bottom: 10px; }
+  #login_container #cancel_login {
+    color: #da3832 !important; }
+
+@media screen and (max-width: 1000px) {
+  #header_container {
+    font-size: 62px !important; }
+    #header_container span {
+      font-size: 32px !important; }
+
+  #admin_panel {
+    display: none !important; }
+
+  #sidebar_container {
+    display: none; }
+
+  #textline_body_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%; }
+
+  #message_container {
+    width: 90% !important;
+    margin: 20px; }
+
+  #main_container {
+    width: 100%; }
+
+  .message {
+    width: 100% !important;
+    height: 250px !important;
+    font-size: 150% !important; }
+
+  .message_body_container {
+    margin-top: 25px; }
+
+  .message_body_container {
+    font-size: 150% !important; }
+
+  .message_display_name {
+    font-size: 200% !important; } }
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+  #header_container {
+    font-size: 62px !important; }
+    #header_container span {
+      font-size: 32px !important; }
+
+  #admin_panel {
+    display: none !important; }
+
+  #sidebar_container {
+    display: none; }
+
+  #textline_body_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%; }
+
+  #message_container {
+    width: 90% !important;
+    margin: 20px; }
+
+  #main_container {
+    width: 100%; }
+
+  .message {
+    width: 100% !important;
+    height: 250px !important;
+    font-size: 150% !important; }
+
+  .message_body_container {
+    margin-top: 25px; }
+
+  .message_body_container {
+    font-size: 150% !important; }
+
+  .message_display_name {
+    font-size: 200% !important; } }
+
+/*# sourceMappingURL=styles.css.map */
