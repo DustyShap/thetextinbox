@@ -73,7 +73,7 @@ def admin_login():
     if request.method == 'POST':
         password_attempt = request.form['admin_password']
         password = db.session.query(AdminUser.password).first()
-        print(password)
+        print(password_attempt)
         if password_attempt == password[0]:
             session['admin'] = True
             return redirect(url_for('index'))
