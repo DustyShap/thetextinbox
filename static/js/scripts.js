@@ -7,34 +7,15 @@ $(document).ready(function(){
     window.location.href = "/"
   })
 
-  $(document).on("click","#user_search_button",function(event){
-    if($("#user_search").val() == ''){
-      return
+
+
+  $("#user_search").keypress(function(event){
+    if (event.keyCode == 13){
+      searchUser()
     }
-    $.ajax({
-      data:{
-        search_term:$("#user_search").val()
-      },
-      type:'POST',
-      url:'/search_for_user'
-    })
-    .done(function(data){
-
-      $("#sidebar_contacts").empty()
-      for (var i = 0; i < data.length; i++){
-
-        $new_searched_contact = $new_searched_contact_template.clone()
-        $new_searched_contact.removeAttr("id")
-        $new_searched_contact.children(".message_information").attr('id',data[i].user_id)
-        $new_searched_contact.children().children('.message_username').prepend(data[i].user)
-        $new_searched_contact.children().children('.contact_from_number').html(data[i].number)
-        $new_searched_contact.children().children('.message_from_location').html(data[i].location)
-        $new_searched_contact.children(".message_user_total").html(data[i].text_count)
-        $new_searched_contact.appendTo("#sidebar_contacts").css('display','flex')
-
-      }
-    })
-
+  })
+  $(document).on("click","#user_search_button",function(event){
+      searchUser()
   })
 
   $(document).on("click",".contact_container",function(event){
@@ -156,5 +137,34 @@ $(document).ready(function(){
     $new_message.prependTo("#message_container").css('display','flex')
 
   })
+
+  function searchUser() {
+    if($("#user_search").val() == ''){
+      return
+    }
+    $.ajax({
+      data:{
+        search_term:$("#user_search").val()
+      },
+      type:'POST',
+      url:'/search_for_user'
+    })
+    .done(function(data){
+
+      $("#sidebar_contacts").empty()
+      for (var i = 0; i < data.length; i++){
+
+        $new_searched_contact = $new_searched_contact_template.clone()
+        $new_searched_contact.removeAttr("id")
+        $new_searched_contact.children(".message_information").attr('id',data[i].user_id)
+        $new_searched_contact.children().children('.message_username').prepend(data[i].user)
+        $new_searched_contact.children().children('.contact_from_number').html(data[i].number)
+        $new_searched_contact.children().children('.message_from_location').html(data[i].location)
+        $new_searched_contact.children(".message_user_total").html(data[i].text_count)
+        $new_searched_contact.appendTo("#sidebar_contacts").css('display','flex')
+
+      }
+    })
+  }
 
 });
