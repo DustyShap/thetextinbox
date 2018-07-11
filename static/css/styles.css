@@ -40,8 +40,8 @@ a {
     background-color: #d6d6d6;
     border-bottom: 1px solid black; }
     #textline_main_container #header_container span {
-      font-size: 12px;
-      padding-bottom: 10px; }
+      font-size: 16px;
+      padding-bottom: 20px; }
     #textline_main_container #header_container #admin_panel {
       color: black;
       width: 100%;
