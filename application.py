@@ -54,7 +54,7 @@ def all_single_user_messages():
 def search_for_user():
     all_searched_users_list = []
     search_term = request.form['search_term']
-    users = User.query.filter(User.display_name.ilike("%"+search_term+"%")).all()
+    users = User.query.filter(User.display_name.ilike("%"+search_term+"%") | User.phone_number.ilike("%"+search_term+"%")).all()
     for user in users:
         all_searched_users_dict = {}
         all_searched_users_dict['user'] = user.display_name
