@@ -95,7 +95,7 @@ def sms():
     message_body = request.form['Body']
     from_city  = request.form['FromCity']
     from_state = request.form['FromState']
-    timestamp = datetime.datetime.now().strftime("%-m/%d/%Y %-I:%M%p")
+    timestamp = datetime.datetime.now().strftime("%-m/%d/%Y %-I:%M:%S%p")
     default_name = "The " + phone_number[:3]
     location = f"{from_city}, {from_state}"
     num_media = int(request.form['NumMedia'])
@@ -156,7 +156,7 @@ def get_all_messages():
     return db.session.query(Message,User).join(User, Message.message_user_id == User.id).order_by(desc(Message.message_timestamp)).all()
 
 def get_all_user_messages(user_id):
-    return db.session.query(Message,User).join(User,Message.message_user_id == User.id).filter(User.id == user_id).order_by(desc(Message.message_timestamp)).all()
+    return db.session.query(Message,User).join(User,Message.message_user_id == User.id).filter(User.id == user_id).order_by(Message.message_timestamp).all()
 
 def user_total_texts(user_id):
     return Message.query.filter_by(message_user_id=user_id).count()
