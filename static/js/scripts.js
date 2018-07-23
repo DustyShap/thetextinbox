@@ -96,7 +96,7 @@ $(document).ready(function(){
     var user_id = data.user.user_id;
     var media = data.message.media;
 
-    console.log(data)
+
 
     if (does_contact_exist === true){
 
@@ -108,7 +108,7 @@ $(document).ready(function(){
 
 
     } else if (does_contact_exist === false) {
-        console.log(user_id)
+
         var $new_contact_message_container =  $("#contact_container_template").clone()
         $new_contact_message_container.removeAttr("id")
         $new_contact_message_container.children(".message_information").attr('id',user_id)
@@ -117,7 +117,7 @@ $(document).ready(function(){
         $new_contact_message_container.children().children(".message_from_location").html(location)
         $new_contact_message_container.children(".message_user_total").html(total_texts_from_user)
         $new_contact_message_container.prependTo("#sidebar_contacts").css('display','flex')
-        // window.location.href = "/"
+
     }
 
     var $new_message = $("#message_container_template").clone()
@@ -127,6 +127,8 @@ $(document).ready(function(){
     $new_message.children('.message_from_number').html(number)
     $new_message.children('.message_body_container').html(message_body)
     $new_message.children('.message_received_time').html(timestamp)
+
+
     if(media){
       $new_message.addClass('message_with_picture')
       $new_message.children("#media_placeholder").addClass('message_media_container').removeAttr('id')
@@ -135,7 +137,8 @@ $(document).ready(function(){
     }
 
     $new_message.prependTo("#message_container").css('display','flex')
-    
+    location.reload();
+
   })
 
   function searchUser() {
