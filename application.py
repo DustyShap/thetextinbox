@@ -150,10 +150,10 @@ def get_all_users():
     return db.session.query(User).join(Message, User.id==Message.message_user_id).order_by(desc(Message.message_timestamp)).all()
 
 def get_all_specific_users(user_id):
-    return db.session.query(User).join(Message, User.id==Message.message_user_id).filter(User.id == user_id).order_by(desc(Message.message_timestamp)).all()
+    return db.session.query(User).join(Message, User.id==Message.message_user_id).filter(User.id == user_id).order_by(desc(Message.id)).all()
 
 def get_all_messages():
-    return db.session.query(Message,User).join(User, Message.message_user_id == User.id).order_by(desc(Message.message_timestamp)).all()
+    return db.session.query(Message,User).join(User, Message.message_user_id == User.id).order_by(desc(Message.id)).all()
 
 def get_all_user_messages(user_id):
     return db.session.query(Message,User).join(User,Message.message_user_id == User.id).filter(User.id == user_id).order_by(desc(Message.message_timestamp)).all()
