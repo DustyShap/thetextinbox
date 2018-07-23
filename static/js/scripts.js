@@ -4,7 +4,8 @@ $(document).ready(function(){
   var $new_searched_contact_template =  $("#contact_container_template").clone()
 
   $(document).on("click",'#all_users_button_container',function(event){
-    window.location.href = "/"
+    // window.location.href = "/"
+    window.location.reload();
   })
 
 
@@ -138,6 +139,7 @@ $(document).ready(function(){
 
     $new_message.prependTo("#message_container").css('display','flex')
     // window.location.href = "/"
+    window.location.reload();
 
   })
 
