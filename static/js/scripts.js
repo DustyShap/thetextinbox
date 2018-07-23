@@ -137,7 +137,7 @@ $(document).ready(function(){
     }
 
     $new_message.prependTo("#message_container").css('display','flex')
-    location.reload();
+    window.location.href = "/"
 
   })
 
