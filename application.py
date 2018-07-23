@@ -156,7 +156,7 @@ def get_all_messages():
     return db.session.query(Message,User).join(User, Message.message_user_id == User.id).order_by(desc(Message.message_timestamp)).all()
 
 def get_all_user_messages(user_id):
-    return db.session.query(Message,User).join(User,Message.message_user_id == User.id).filter(User.id == user_id).order_by(Message.message_timestamp).all()
+    return db.session.query(Message,User).join(User,Message.message_user_id == User.id).filter(User.id == user_id).order_by(desc(Message.message_timestamp)).all()
 
 def user_total_texts(user_id):
     return Message.query.filter_by(message_user_id=user_id).count()
