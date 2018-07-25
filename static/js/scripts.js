@@ -75,6 +75,7 @@ $(document).ready(function(){
       type:'POST',
       url:'/update_name'
     })
+    window.location.reload();
   })
 
 
