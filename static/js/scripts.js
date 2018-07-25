@@ -163,7 +163,7 @@ $(document).ready(function(){
         $new_searched_contact = $new_searched_contact_template.clone()
         $new_searched_contact.removeAttr("id")
         $new_searched_contact.children(".message_information").attr('id',data[i].user_id)
-        $new_searched_contact.children().children('.message_username').prepend(data[i].user)
+        $new_searched_contact.children().children('.message_username').prepend(data[i].user.substring(0,22))
         $new_searched_contact.children().children('.contact_from_number').html(data[i].number)
         $new_searched_contact.children().children('.message_from_location').html(data[i].location)
         $new_searched_contact.children(".message_user_total").html(data[i].text_count)
