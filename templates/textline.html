@@ -24,7 +24,7 @@
           {% for user in all_users %}
           <div class='contact_container'>
                 <div class='message_information' id={{user.user.id}}>
-                  <div class='message_username' >{{user.user.display_name}}
+                  <div class='message_username' >{{user.user.display_name[0:22]}}
                     {% if is_admin %}
                       <i class="fa fa-edit edit_name"></i>
                     {% endif %}
