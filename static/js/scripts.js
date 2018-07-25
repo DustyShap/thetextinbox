@@ -56,7 +56,7 @@ $(document).ready(function(){
   $(document).on("click",".edit_name",function(event){
     $new_div = $(this).parent(".message_username").parent();
     var previousValue = $(this).parent(".message_username").text().trim()
-    var $input = "<input value='"+previousValue+"' class='name_change' maxlength='22'/>"
+    var $input = "<input value='"+previousValue+"' class='name_change' maxlength='40'/>"
     var $name_change_button = $("<button>Update</button>").attr('id','name_change_button')
     $(this).parent(".message_username").replaceWith("<div class='message_username'>"+$input+"</div>")
     $new_div.children('.message_username').append($name_change_button)
