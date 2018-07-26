@@ -1,5 +1,7 @@
 language: python
-  python:
-    - "3.6"
-  script:
-    - python tests.py
+python:
+  - "3.6"
+install:
+  - pip3 install -r requirements.txt
+script:
+  - python3 tests.py
