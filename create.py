@@ -2,7 +2,7 @@ import os
 
 from flask import Flask, render_template, request
 from flask_socketio import SocketIO, emit, join_room
-from models import *
+from models import db
 
 
 

@@ -12,8 +12,6 @@ import json
 from models import db, User, Message, AdminUser
 from create import create_app
 
-db = SQLAlchemy()
-
 app = create_app()
 
 # app = Flask(__name__)
