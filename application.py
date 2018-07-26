@@ -4,19 +4,24 @@ from flask import (Flask, session,
 from flask_session import Session
 from flask_socketio import SocketIO, emit, join_room
 from sqlalchemy import create_engine, desc
+from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import scoped_session, sessionmaker
 from twilio.twiml.messaging_response import MessagingResponse
 import datetime
 import json
-from models import *
+from models import db, User, Message, AdminUser
+from create import create_app
 
+db = SQLAlchemy()
 
-app = Flask(__name__)
-app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-db.init_app(app)
-socketio = SocketIO(app)
+app = create_app()
+
+# app = Flask(__name__)
+# app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
+# app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
+# app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+# db.init_app(app)
+# socketio = SocketIO(app)
 
 # Routes
 @app.route("/", methods=['POST', 'GET'])
@@ -145,6 +150,8 @@ def update_name():
 @app.before_request
 def make_session_permanent():
     session.permanent = True
+
+
 
 def get_all_users():
     return db.session.query(User).join(Message, User.id==Message.message_user_id).order_by(desc(Message.id)).all()
