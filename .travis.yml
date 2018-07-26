@@ -1,10 +1,12 @@
 language: python
 python:
-  - "3.6"
+- '3.6'
 install:
-  - pip3 install -r requirements.txt
+- pip3 install -r requirements.txt
 before_script:
-  - export FLASK_APP='application.py'
-  - export FLASK_DEBUG=1
+- export FLASK_APP='application.py'
+- export FLASK_DEBUG=1
 script:
-  - python3 tests.py
+- python3 tests.py
+env:
+  secure: RnFxJckCkw57kRI8VrjLJz8QRy/EgIOeLqYYJTVkMH2HAGusmgLe7DKj3mBsgOExraN987Ptr731Ao5ygnpCVDLcltA/iz2hQbsh2qEwkMHCB0ReMZ6b/go1MEUTn8t1hDDh1uLVYDhUiNs6Nq3hDy8YLZAA2X/uuJAU3n95ALhD3oQ4salwhjiJtjkaPr6N7+a3g8oxM8KKmQR/ouo6Antxd3V/bqXVEChn7iLfabrXfXNxijooifDCLP925IShRXNBww9EwcJk6nAkhtPhhkjwxHPD7zi1dJB+LBjhEh87gcr2VB/F14evjkMUviIjR8FhWsvMnOyw6MYk+v4xC69ZXt49g+c6qy7jRfKX1qpDpGKBVXJ2ytQblAKY79O/2FX1aVuy2dKXHEi+Wb2Z9uOEWkhyvoBk/EaU2onXE3vLtdvj1YcwgSQj1MB7FMU1zPV/LB9uz2cxiF7KTx/bkIdILstcjXvI415R1tEz9Jiz9J/LSK6JBj1wQY3NBP2hSkbghc522DWt8LVKfIinxYpGhIRXt9EKcSGN1qZQb/XPj7OmUVNSkFpoEDsNBSK6MHLDAFqZLyGhLuOTCY7Nc5k1bAOfDN7vY7VVPpMZF8g301XZSKYsrtXPNaCH7B0zKLpJoD+ebEojdq1J13jA4TVDi2bvmH/M+17ecsc0sB4=
