@@ -6,8 +6,7 @@ from models import db, User, Message, AdminUser
 from create import create_app
 
 
-class BasicTests(unittest.TestCase):
-
+class TestCase(unittest.TestCase):
     def setUp(self):
         app.config['TESTING'] = True
         app.config['WTF_CSRF_ENABLED'] = False
@@ -24,7 +23,6 @@ class BasicTests(unittest.TestCase):
         response = self.app.get('/')
         self.assertEqual(response.status_code, 200)
 
-
     def test_create_user(self):
         u = User(phone_number='5555555555',
                  display_name='John',
@@ -33,10 +31,10 @@ class BasicTests(unittest.TestCase):
         db.session.commit()
         self.assertEqual(u.display_name, 'John')
 
-
     def test_create_msg(self):
+        cur_time = datetime.datetime.now().strftime("%-m/%d/%Y %-I:%M:%S%p")
         m = Message(message_body='Test msg',
-                    message_timestamp=datetime.datetime.now().strftime("%-m/%d/%Y %-I:%M:%S%p"),
+                    message_timestamp=cur_time,
                     message_user_id=1)
         db.session.add(m)
         db.session.commit()
@@ -49,11 +47,11 @@ class BasicTests(unittest.TestCase):
         db.session.add(u)
         db.session.commit()
         new_name = 'Jimmy'
-        user_to_update = User.query.filter_by(phone_number='5555555555').first()
+        user_to_update = User.query.filter_by(
+                                    phone_number='5555555555').first()
         user_to_update.display_name = new_name
         db.session.commit()
         self.assertEqual(user_to_update.display_name, new_name)
-
 
 
 if __name__ == '__main__':
