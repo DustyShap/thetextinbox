@@ -1,4 +1,5 @@
 # The Text Inbox
+[![Build Status](https://travis-ci.org/DustyShap/thetextinbox.svg?branch=master)](https://travis-ci.org/DustyShap/thetextinbox)
 
 Experimental application designed to replace existing text inbox application for [The Morning After](http://insidestl.com/radio-shows/the-morning-after) radio show.
 

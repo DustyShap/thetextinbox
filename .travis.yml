@@ -1,0 +1,12 @@
+language: python
+python:
+  - "3.6"
+install:
+  - pip3 install -r requirements.txt
+before_script:
+  - export SECRET_KEY="b'\x8a\xd1D~\x11\xaf\xa8\xa4\xfe\t\xf0j\x82\xb0\xdaS5\xa1\x18\xec\xdeS\x8b5'"
+  - export FLASK_APP='application.py'
+  - export FLASK_DEBUG=1
+  - export DATABASE_URL='postgres://vydiayewoxybgi:2927a1e85eb61d327df37dc3bd0471af8c24ea73b59e9366e5cbcc96b0994a00@ec2-54-83-33-213.compute-1.amazonaws.com:5432/d8dqi8siqhpg1j'
+script:
+  - python3 tests.py
