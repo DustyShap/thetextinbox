@@ -5,7 +5,6 @@ from flask_socketio import SocketIO, emit, join_room
 from models import db
 
 
-
 def create_app():
     app = Flask(__name__)
     app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
@@ -15,7 +14,6 @@ def create_app():
     socketio = SocketIO(app)
     return app
 
-# db.init_app(app)
 
 def main():
     db.create_all()

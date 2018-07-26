@@ -13,6 +13,7 @@ from models import db, User, Message, AdminUser
 from create import create_app
 
 app = create_app()
+app.app_context().push()
 
 # app = Flask(__name__)
 # app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
@@ -20,7 +21,6 @@ app = create_app()
 # app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 # db.init_app(app)
 # socketio = SocketIO(app)
-
 # Routes
 @app.route("/", methods=['POST', 'GET'])
 def index():
