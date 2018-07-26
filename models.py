@@ -1,5 +1,6 @@
 import os
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import create_engine, desc
 
 
 db = SQLAlchemy()
@@ -19,6 +20,13 @@ class User(db.Model):
                     "user_id":self.id,
                 }
 
+    def get_all_users():
+        return db.session.query(User).join(Message, User.id==Message.message_user_id).order_by(desc(Message.id)).all()
+
+    def user_total_texts(user_id):
+        return Message.query.filter_by(message_user_id=user_id).count()
+
+
 class Message(db.Model):
     __tablename__ = 'messages'
     id = db.Column(db.Integer, primary_key=True)
@@ -34,6 +42,14 @@ class Message(db.Model):
                 "timestamp":self.message_timestamp,
                 'media':self.message_media_url,
             }
+
+    def get_all_messages():
+        return db.session.query(Message,User).join(User, Message.message_user_id == User.id).order_by(desc(Message.id)).all()
+
+    def get_all_user_messages(user_id):
+        return db.session.query(Message,User).join(User,Message.message_user_id == User.id).filter(User.id == user_id).order_by(desc(Message.id)).all()
+
+
 
 class AdminUser(db.Model):
     __tablename__ = 'admin_user'

@@ -2,7 +2,6 @@ import unittest
 import os
 from application import app
 
-
 class BasicTests(unittest.TestCase):
     def test_main_page(self):
         self.app = app.test_client()
