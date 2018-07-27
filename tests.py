@@ -53,8 +53,12 @@ class TestCase(unittest.TestCase):
         db.session.commit()
         self.assertEqual(user_to_update.display_name, new_name)
 
-    def test_admin_login(self):
-        pass
+    def test_search_user(self):
+        self.assertTrue(User.query.filter_by(id=1))
+
+    def test_admin_logout(self):
+        response = self.app.get('/admin_logout')
+        self.assertEqual(response.status_code,302)
 
 
 if __name__ == '__main__':
