@@ -4,6 +4,7 @@ from flask import Flask, render_template, request
 from flask_socketio import SocketIO, emit, join_room
 from models import db
 
+
 def create_app():
     app = Flask(__name__)
     app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
