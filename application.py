@@ -13,6 +13,7 @@ from create import create_app
 
 
 app = create_app()
+socketio = SocketIO(app)
 app.app_context().push()
 
 
