@@ -3,3 +3,6 @@ venv
 ngrok
 twilio.py
 __pycache__
+*.pyc
+docker.env
+Procfile

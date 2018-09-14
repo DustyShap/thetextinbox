@@ -20,5 +20,5 @@ def main():
 
 
 if __name__ == '__main__':
-    with app.app_context():
+    with create_app().app_context():
         main()
