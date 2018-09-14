@@ -8,3 +8,14 @@ Allows for two views - one, a normal view that allows anyone to view incoming te
 www.thetextinbox.com
 
 ![The Text Inbox](static/img/textinbox_screen.png)
+
+
+## Setup Instructions
+
+* Copy the `docker.env.sample` to `docker.env`
+* Fill in your secret values
+* `docker-compose build`
+* `docker-compose up -d`
+* Run `docker exec -it thetextinbox_db_1 psql -d postgres -U postgres` and once
+  in run `create database thetextinbox;`. Exit the docker shell afterwards
+* Run `docker exec -it thetextinbox_web_1 python create.py`
