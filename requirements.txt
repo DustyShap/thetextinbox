@@ -20,9 +20,9 @@ python-dotenv==0.8.2
 python-engineio==2.0.4
 python-socketio==1.9.0
 pytz==2018.4
-requests==2.18.4
+requests>=2.20.0
 six==1.11.0
 SQLAlchemy==1.2.7
 twilio==6.12.1
-urllib3==1.22
+urllib3>=1.23
 Werkzeug==0.14.1
