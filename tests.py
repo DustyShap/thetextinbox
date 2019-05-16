@@ -1,8 +1,7 @@
 import unittest
-import os
 import datetime
 from application import app
-from models import db, User, Message, AdminUser
+from models import db, User, Message
 from create import create_app
 
 
@@ -58,7 +57,7 @@ class TestCase(unittest.TestCase):
 
     def test_admin_logout(self):
         response = self.app.get('/admin_logout')
-        self.assertEqual(response.status_code,302)
+        self.assertEqual(response.status_code, 302)
 
 
 if __name__ == '__main__':

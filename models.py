@@ -1,6 +1,5 @@
-import os
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import create_engine, desc
+from sqlalchemy import desc
 
 
 db = SQLAlchemy()
@@ -40,12 +39,12 @@ class Message(db.Model):
     message_media_url = db.Column(db.String, nullable=True)
 
     def to_dict(self):
-            return {
-                "user_id": self.message_user_id,
-                "message_body": self.message_body,
-                "timestamp": self.message_timestamp,
-                'media': self.message_media_url,
-            }
+        return {
+            "user_id": self.message_user_id,
+            "message_body": self.message_body,
+            "timestamp": self.message_timestamp,
+            "media": self.message_media_url,
+        }
 
     def get_all_messages():
         return db.session.query(Message, User).join(

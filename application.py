@@ -32,6 +32,7 @@ def index():
         all_user_dict['user'] = user
         all_user_dict['text_count'] = User.user_total_texts(user.id)
         all_users_list.append(all_user_dict)
+
     return render_template('textline.html',
                            all_users=all_users_list,
                            all_messages=all_messages,
