@@ -146,10 +146,7 @@ def sms():
 def update_name():
     new_name = request.form['new_name']
     number_to_update = request.form['number_to_update']
-    user_to_update = User.query.filter_by(
-                                         phone_number=number_to_update).first()
-    user_to_update.display_name = new_name
-    db.session.commit()
+    User.update_text_name(number_to_update, new_name)
     return redirect(url_for('index'))
 
 

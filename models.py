@@ -28,6 +28,10 @@ class User(db.Model):
     def user_total_texts(user_id):
         return Message.query.filter_by(message_user_id=user_id).count()
 
+    def update_text_name(phone_number, new_name):
+        user_to_update = User.query.filter_by(phone_number=phone_number).first()
+        user_to_update.display_name = new_name
+        db.session.commit()
 
 class Message(db.Model):
     __tablename__ = 'messages'
